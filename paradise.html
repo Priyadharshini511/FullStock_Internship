@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie's Paradise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        <!-- header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        } -->
+        nav {
+            background-color: #556b2f;
+            text-align: center;
+            padding: 0.5em 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 30px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Foodie's Paradise</h1>
+        <p>Where Delicious Meets Divine</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to Foodie's Paradise</h2>
+        <p>At Foodie's Paradise, we offer a unique dining experience with freshly prepared dishes made from locally sourced ingredients. Come indulge your senses and savor the best of gourmet cuisine.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <table>
+            <tr>
+                <th>Dish</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Grilled Salmon</td>
+                <td>Freshly grilled salmon with a lemon butter sauce.</td>
+                <td>$18.99</td>
+            </tr>
+            <tr>
+                <td>Vegan Buddha Bowl</td>
+                <td>A hearty mix of quinoa, chickpeas, avocado, and vegetables.</td>
+                <td>$12.99</td>
+            </tr>
+            <tr>
+                <td>Cheeseburger Deluxe</td>
+                <td>A classic cheeseburger served with crispy fries.</td>
+                <td>$15.99</td>
+            </tr>
+            <tr>
+                <td>Chocolate Lava Cake</td>
+                <td>A rich chocolate cake with a molten center.</td>
+                <td>$7.99</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="subscriptionForm" onsubmit="return validateForm()">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="thankYouMessage" style="display: none; margin-top: 10px; color: green;">
+            Thank you for subscribing!
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>123 Gourmet Street, Foodtown | Phone: (555) 123-4567</p>
+        <p>Follow us on:</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const name = document.getElementById("name").value;
+            
+            // Check if the email field is empty or invalid
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!email || !emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Check if the name field is empty
+            if (!name) {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            // Display the thank you message after successful form submission
+            document.getElementById("thankYouMessage").style.display = "block";
+            return false; // Prevent form submission for demo purposes
+        }
+    </script>
+</body>
+</html>
